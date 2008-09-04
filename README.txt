@@ -1,26 +1,30 @@
 = gravatarutil
 
-* FIX (url)
+www.nerdEd.net
 
 == DESCRIPTION:
 
-FIX (describe your package)
+A Ruby gem which provides some gravatar utility functions. Some of which are OS agnostic, i.e. getting your gravatar image. Some of which are OS specific, i.e. setting your gravatr icon to be your OS X icon.
 
 == FEATURES/PROBLEMS:
 
-* FIX (list of features or problems)
+- Add ability to retrieve icon
+- Add stuff that makes this thing work as a gem
+- Add ability to set OS X icon to gravatar icon
+- Create some sort of persistent configuration
 
 == SYNOPSIS:
 
-  FIX (code sample of usage)
+Usage: gravatarutil -fetch <some file name>
+	
 
 == REQUIREMENTS:
 
-* FIX (list of requirements)
+none
 
 == INSTALL:
 
-* FIX (sudo gem install, anything else)
+sudo gem install gravatarutil
 
 == LICENSE:
 
