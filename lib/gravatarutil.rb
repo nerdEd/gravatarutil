@@ -1,21 +1,15 @@
 #!/usr/bin/env ruby 
 
 # == Synopsis 
-#   This is a sample description of the application.
-#   Blah blah blah.
+#   Command line utility for gravatar
 #
 # == Examples
-#   This command does blah blah blah.
-#     ruby_cl_skeleton foo.txt
-#
-#   Other examples:
-#     ruby_cl_skeleton -q bar.doc
-#     ruby_cl_skeleton --verbose foo.html
+#   gravatarutil -fetch <some_file_name>
 #
 # == Usage 
-#   ruby_cl_skeleton [options] source_file
+#   gravatarutil [options]
 #
-#   For help use: ruby_cl_skeleton -h
+#   For help use: gravatarutil -h
 #
 # == Options
 #   -h, --help          Displays help message
@@ -25,18 +19,11 @@
 #   TO DO - add additional options
 #
 # == Author
-#   YourName
+#   Ed Schmalzle
 #
 # == Copyright
-#   Copyright (c) 2007 YourName. Licensed under the MIT License:
+#   Copyright (c) 2007 Ed Schmalzle. Licensed under the MIT License:
 #   http://www.opensource.org/licenses/mit-license.php
-
-
-# TO DO - replace all ruby_cl_skeleton with your app name
-# TO DO - replace all YourName with your actual name
-# TO DO - update Synopsis, Examples, etc
-# TO DO - change license if necessary
-
 
 require 'optparse' 
 require 'rdoc/usage'
