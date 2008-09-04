@@ -1,0 +1,7 @@
+History.txt
+Manifest.txt
+README.txt
+Rakefile
+bin/gravatarutil
+lib/gravatarutil.rb
+test/test_gravatarutil.rb
