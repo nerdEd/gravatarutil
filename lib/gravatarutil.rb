@@ -13,6 +13,7 @@
 #   For help use: gravatarutil -h
 #
 # == Options
+#   -f, --file          Pass in a file to save the gravatar as
 #   -h, --help          Displays help message
 #   -v, --version       Display the version, then exit
 #
@@ -42,6 +43,7 @@ class Gravatarutil
     @options = OpenStruct.new
     @file = 'gravatar.jpg'
     @email = ''
+    @set_icon = false
   end
 
   # Parse options, check arguments, then process the command
@@ -69,9 +71,12 @@ class Gravatarutil
         output_help
       end
       
-      opts.on( '-f', '--file' ) do | f |
-        puts f
+      opts.on( '-f', '--file file_name', String, "File name to save the gravatar as." ) do | f |
         @file = f
+      end
+      
+      opts.on( '-i', '--icon' ) do | i |
+        @set_icon = i
       end
       
       opts.parse!(@arguments) rescue return false
@@ -82,7 +87,7 @@ class Gravatarutil
 
     # Performs post-parse processing on options
     def process_options
-      @options.verbose = false if @options.quiet
+      
     end
     
     def output_options
@@ -95,6 +100,7 @@ class Gravatarutil
 
     def arguments_valid?
       if @arguments.length < 1 then
+        puts "Required arguments have not been supplied."
         return false
       else
         return true
@@ -121,6 +127,14 @@ class Gravatarutil
     def process_command
       gravatar = Gravatar.new( @email )
       gravatar.save( @file )
+      if( @set_icon ) then
+        if( RUBY_PLATFORM.include? "darwin" ) then
+          #system "osascript -e set the picture path of current user to alias quoted form of" + " #{@file}"
+          puts "gravatarutil cannot yet do this, sorry."
+        else
+          puts "gravatarutil cannot set the user icon on non darwin operating systems."
+        end
+      end
     end
 
     def process_standard_input
